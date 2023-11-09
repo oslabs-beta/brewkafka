@@ -21,9 +21,9 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         exclude: /node_modules/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
@@ -34,9 +34,9 @@ module.exports = {
   ],
   devServer: {
     port: 8080,
-    proxy: {
-      '/': 'http://localhost:1234',
-    },
+    // proxy: {
+    //   '/': 'http://localhost:1234',
+    // },
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],

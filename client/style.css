@@ -1,0 +1,13 @@
+p {
+  color: green;
+}
+
+.container {
+  border: 3px solid black;
+  background-color: pink;
+}
+
+#sidebar {
+  border: 3px solid black;
+  background-color: palegoldenrod;
+}
