@@ -5,10 +5,10 @@ import SidebarContainer from './SidebarContainer'
 const MainContainer = () => {
   return (
     <div className='container'>
-      <div id='sidebar'>
+      <div className='container' id='sidebar'>
         <SidebarContainer />
       </div>
-      <div id='contentDisplay'>
+      <div className='container' id='contentDisplay'>
         <h1>check out our box</h1>
         <p>gonna use this paragraph el to check styling</p>
       </div>

@@ -10,4 +10,23 @@ p {
 #sidebar {
   border: 3px solid black;
   background-color: palegoldenrod;
+  width: 10%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left:0;
+  top:0;
+}
+
+#contentDisplay {
+  float: right;
+  width: 90%;
+}
+
+.sbButton {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
 }
