@@ -17,11 +17,13 @@ p {
   position: fixed;
   left:0;
   top:0;
+  bottom:0;
 }
 
 #contentDisplay {
   float: right;
-  width: 90%;
+  width: 80%;
+  background-color: rgb(210, 43, 210);
 }
 
 .sbButton {
