@@ -37,24 +37,11 @@ const kafka = new Kafka({
 
 
 app.get('/getmessages', async (req, res) => {
-  //creating a producer
-  // const producer = kafka.producer();
-  
-  
-  // await producer.connect();
-  // await producer.send({
-  //   topic: 'quickstart-events',
-  //   messages: [
-  //     { value: 'It works!!', partition: 0 },
-  //   ],
-  // })
-  
   //creating a consumer
   const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
 
   await consumer.connect();
   await consumer.subscribe({ topic: 'quickstart-events', fromBeginning: true });
-
 
   const messages = [];
   await consumer.run({
@@ -65,11 +52,11 @@ app.get('/getmessages', async (req, res) => {
       }) 
       console.log(messages);
     }
-  }) 
-
-  // console.log(messages)
-  res.json(messages);
-})
+  })
+  return res.status(200).json(messages);
+  
+  // await consumer.disconnect();
+}) 
 
 //unknown route error
 app.use((req, res) => {
