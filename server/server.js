@@ -30,6 +30,7 @@ app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
   return res.status(200);
 })
 
+
 //new kafka instance
 const kafka = new Kafka({
   brokers: ['localhost:9092']
@@ -45,21 +46,21 @@ app.get('/getmessages', async (req, res) => {
   // await producer.send({
   //   topic: 'testing-topic',
   //   messages: [
-  //     { value: 'It works!!', partition: 0 },
+  //     { value: 'new test message', partition: 0 },
   //   ],
   // })
   
-  //creating a consumer
-  const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
+  // creating a consumer
+  const consumer = kafka.consumer({ groupId: 'new-consumer-group' });
 
   await consumer.connect();
-  await consumer.subscribe({ topic: 'test-events', fromBeginning: true });
+  await consumer.subscribe({ topic: 'testing-topic', fromBeginning: true });
 
 
   // await consumer.run({
   //   eachMessage: async ({ topic, partition, message }) => {
   //     console.log('MESSAGE: ', {
-  //       value: message.value.toString(),
+  //       value: message.value.toString(), 
   //     })
   //   },
   // })
@@ -73,11 +74,11 @@ app.get('/getmessages', async (req, res) => {
         value: message.value.toString(),
       }) 
       console.log(messages);
+      res.json(messages);
     }
   }) 
 
   // console.log(messages)
-  await res.json(messages);
 })
 
 //unknown route error
