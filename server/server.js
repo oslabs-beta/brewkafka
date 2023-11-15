@@ -18,11 +18,11 @@ app.get('/connect', kafkaController.connectButton, (req, res) => {
 //   res.status(200);
 // })
 
-app.get('/topics&partitions', kafkaController.displayTopicsAndPartitions, (req, res) => {
+app.get('/topics-partitions', kafkaController.displayTopicsAndPartitions, (req, res) => {
   res.status(200);
 })
 
-app.get('/producers&consumers', kafkaController.displayProducersAndConsumers, (req, res) => {
+app.get('/producers-consumers', kafkaController.displayProducersAndConsumers, (req, res) => {
   res.status(200);
 })
 
@@ -30,9 +30,59 @@ app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
   res.status(200);
 })
 
+//new kafka instance
+const kafka = new Kafka({
+  brokers: ['localhost:9092']
+});
+
+
+app.get('/getmessages', async (req, res) => {
+  //creating a producer
+  // const producer = kafka.producer();
+  
+  
+  // await producer.connect();
+  // await producer.send({
+  //   topic: 'testing-topic',
+  //   messages: [
+  //     { value: 'It works!!', partition: 0 },
+  //   ],
+  // })
+  
+  //creating a consumer
+  const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
+
+  await consumer.connect();
+  await consumer.subscribe({ topic: 'test-events', fromBeginning: true });
+
+
+  // await consumer.run({
+  //   eachMessage: async ({ topic, partition, message }) => {
+  //     console.log('MESSAGE: ', {
+  //       value: message.value.toString(),
+  //     })
+  //   },
+  // })
+
+
+  const messages = [];
+  await consumer.run({
+    eachMessage: async ({ message }) => {
+      messages.push(message.value.toString());
+      console.log({
+        value: message.value.toString(),
+      }) 
+      console.log(messages);
+    }
+  }) 
+
+  // console.log(messages)
+  await res.json(messages);
+})
+
 //unknown route error
 app.use((err, req, res, next) => {
-    res.status(404).send('Page not found');
+  res.status(404).send('Page not found');
 });
 
 //global error handler
@@ -45,34 +95,6 @@ app.use((err, req, res, next) => {
   const errorObj = Object.assign(defaultErr, err);
   return res.status(errorObj.status).json(errorObj.message);
 });
-
-const kafka = new Kafka({
-  clientId: 'kafkabroker1',
-  brokers: ['localhost:9092']
-})
-
-const consumer = kafka.consumer({ groupId: 'test-group' });
-
-app.get('/getmessages', async (req, res) => {
-  await consumer.connect();
-  await consumer.subscribe({ topic: 'test-events', fromBeginning: true });
-
-  const messages = [];
-  await consumer.run({
-    eachMessage: async ({ message }) => {
-      messages.push(message.value.toString());
-      console.log({
-        value: message.value.toString(),
-      })
-    }
-  })
-
-  await consumer.disconnect();
-
-  console.log(messages)
-  res.json(messages);
-})
-
 
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`));
