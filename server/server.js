@@ -11,11 +11,11 @@ app.use(express.json());
 
 //get request on connect button
 app.get('/connect', kafkaController.connectButton, (req, res) => {
-  res.status(200);
+  return res.status(200);
 });
 
 // app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
-//   res.status(200);
+//   return res.status(200);
 // })
 
 app.get('/topics-partitions', kafkaController.displayTopicsAndPartitions, (req, res) => {
@@ -27,7 +27,7 @@ app.get('/producers-consumers', kafkaController.displayProducersAndConsumers, (r
 })
 
 app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
-  res.status(200);
+  return res.status(200);
 })
 
 //new kafka instance
@@ -81,8 +81,8 @@ app.get('/getmessages', async (req, res) => {
 })
 
 //unknown route error
-app.use((err, req, res, next) => {
-  res.status(404).send('Page not found');
+app.use((req, res) => {
+   return res.status(404).send('Page not found');
 });
 
 //global error handler

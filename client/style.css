@@ -3,14 +3,14 @@ p {
 }
 
 .container {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   background-color: pink;
 }
 
 #sidebar {
   border: 3px solid black;
   background-color: palegoldenrod;
-  width: 10%;
+  width: 11.4%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -18,17 +18,23 @@ p {
   left:0;
   top:0;
   bottom:0;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+
 }
 
 #contentDisplay {
   float: right;
   width: 80%;
-  background-color: rgb(210, 43, 210);
+  background-color: rgb(68, 166, 219);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Hina Mincho', serif;
 }
 
 .sbButton {
   width: 100%;
-  height: 50px;
+  height: 25%;
   display: flex;
   flex-direction: column;
+  font-family: 'Cabin', sans-serif;
+
 }
