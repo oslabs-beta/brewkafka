@@ -51,20 +51,11 @@ app.get('/getmessages', async (req, res) => {
   // })
   
   // creating a consumer
-  const consumer = kafka.consumer({ groupId: 'new-consumer-group' });
+  // const consumer = kafka.consumer({ groupId: 'new-consumer-group' });
+  const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
 
   await consumer.connect();
-  await consumer.subscribe({ topic: 'testing-topic', fromBeginning: true });
-
-
-  // await consumer.run({
-  //   eachMessage: async ({ topic, partition, message }) => {
-  //     console.log('MESSAGE: ', {
-  //       value: message.value.toString(), 
-  //     })
-  //   },
-  // })
-
+  await consumer.subscribe({ topic: 'test-events', fromBeginning: true });
 
   const messages = [];
   await consumer.run({
@@ -74,12 +65,12 @@ app.get('/getmessages', async (req, res) => {
         value: message.value.toString(),
       }) 
       console.log(messages);
-      res.json(messages);
     }
   }) 
-
-  // console.log(messages)
+  // res.json(messages);
+  return res.status(200).json(messages);
 })
+  
 
 //unknown route error
 app.use((req, res) => {
