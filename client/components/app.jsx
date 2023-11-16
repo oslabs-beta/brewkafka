@@ -9,7 +9,7 @@ import { Alerts } from './pages/Alerts';
 
 const App = () => {
   return (
-    <div className='container'>
+    <div>
       <nav id="sidebar">
           <NavLink className='sbButton' 
           to='/brokers'
@@ -17,8 +17,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -30,8 +28,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -43,8 +39,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -56,8 +50,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -71,7 +63,8 @@ const App = () => {
           <Route path='pcs' element={<ProducersAndConsumers />} />
           <Route path='alerts' element={<Alerts />} />
         </Routes>
-      </div>
+      </div><br/>
+      <img src="../assets/beancarry.png" alt="image didn't load"/>
     </div>
   );
 }
