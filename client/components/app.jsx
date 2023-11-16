@@ -11,10 +11,58 @@ const App = () => {
   return (
     <div className='container'>
       <nav id="sidebar">
-          <NavLink className='sbButton' to='/brokers'>Brokers</NavLink>
-          <NavLink className='sbButton' to='/topics'>Topics/Messages</NavLink>
-          <NavLink className='sbButton' to='/pcs'>Producers/Consumers</NavLink>
-          <NavLink className='sbButton' to='alerts'>Alerts</NavLink>
+          <NavLink className='sbButton' 
+          to='/brokers'
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              fontSize: isActive ? "1.1em" : "1em",
+              color: isPending ? "red" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          >
+            Brokers
+          </NavLink>
+          <NavLink className='sbButton' 
+          to='/topics'
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              fontSize: isActive ? "1.1em" : "1em",
+              color: isPending ? "red" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          >
+            Topics/Messages
+          </NavLink>
+          <NavLink className='sbButton' 
+          to='/pcs'
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              fontSize: isActive ? "1.1em" : "1em",
+              color: isPending ? "red" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          >
+            Producers/Consumers
+          </NavLink>
+          <NavLink className='sbButton' 
+          to='alerts'
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              fontSize: isActive ? "1.1em" : "1em",
+              color: isPending ? "red" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          >
+            Alerts
+          </NavLink>
       </nav>
       <div id='contentDisplay'>
         <Routes>

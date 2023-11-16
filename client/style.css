@@ -10,7 +10,7 @@ p {
 #sidebar {
   border: 3px solid black;
   background-color: palegoldenrod;
-  width: 11.4%;
+  width: 15%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -32,9 +32,12 @@ p {
 
 .sbButton {
   width: 100%;
-  height: 25%;
+  height: 15%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: 'Cabin', sans-serif;
-
+  border: 2px solid black;
+  border-radius: 0px;
+  text-align: center;
 }
