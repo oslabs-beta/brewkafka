@@ -5,7 +5,7 @@ const SidebarContainer = () => {
   return (
       <div className="sidebar">
           <button className='sbButton'>Brokers</button>
-          <button className='sbButton'>Topics/Partitions</button>
+          <button className='sbButton'>Topics/Messages</button>
           <button className='sbButton'>Producers/Consumers</button>
           <button className='sbButton'>Alerts</button>
       </div>

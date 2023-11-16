@@ -12,7 +12,7 @@ const App = () => {
     <div className='container'>
       <nav id="sidebar">
           <NavLink className='sbButton' to='/brokers'>Brokers</NavLink>
-          <NavLink className='sbButton' to='/topics'>Topics/Partitions</NavLink>
+          <NavLink className='sbButton' to='/topics'>Topics/Messages</NavLink>
           <NavLink className='sbButton' to='/pcs'>Producers/Consumers</NavLink>
           <NavLink className='sbButton' to='alerts'>Alerts</NavLink>
       </nav>
