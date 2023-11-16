@@ -5,11 +5,12 @@ import { Brokers } from './pages/Brokers';
 import { Topics } from './pages/Topics';
 import { ProducersAndConsumers } from './pages/ProducersAndConsumers';
 import { Alerts } from './pages/Alerts';
+// import { beanCarry } from '../assets/beancarry.png'
 
 
 const App = () => {
   return (
-    <div className='container'>
+    <div>
       <nav id="sidebar">
           <NavLink className='sbButton' 
           to='/brokers'
@@ -17,8 +18,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -30,8 +29,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -43,8 +40,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -56,8 +51,6 @@ const App = () => {
             return {
               fontWeight: isActive ? "bold" : "",
               fontSize: isActive ? "1.1em" : "1em",
-              color: isPending ? "red" : "black",
-              viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           >
@@ -72,6 +65,8 @@ const App = () => {
           <Route path='alerts' element={<Alerts />} />
         </Routes>
       </div>
+      <br/>
+      {/* <img id="beancarry" src={beanCarry} alt="BrewKafs carrying message beans"/> */}
     </div>
   );
 }
