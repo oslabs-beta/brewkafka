@@ -3,6 +3,7 @@ body {
 }
 
 #wrapper {
+  /* display: flex; */
   position: relative;
 }
 
@@ -55,10 +56,14 @@ body {
 
 #beancarry {
   /* padding-left: 500px; */
-  display: block;
-  width: 300px;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
   position: fixed;
   bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
+  left: 40%;
+  right: 40%;
+  justify-content: center;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
 }
