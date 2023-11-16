@@ -44,9 +44,9 @@ app.get('/getmessages', async (req, res) => {
   
   // await producer.connect();
   // await producer.send({
-  //   topic: 'testing-topic',
+  //   topic: 'new-topic',
   //   messages: [
-  //     { value: 'new test message', partition: 0 },
+  //     { value: 'MESSSAGGEEEE', partition: 0 },
   //   ],
   // })
   
@@ -55,7 +55,7 @@ app.get('/getmessages', async (req, res) => {
   const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
 
   await consumer.connect();
-  await consumer.subscribe({ topic: 'test-events', fromBeginning: true });
+  await consumer.subscribe({ topic: 'new-topic', fromBeginning: true });
 
   const messages = [];
   await consumer.run({
@@ -64,13 +64,35 @@ app.get('/getmessages', async (req, res) => {
       console.log({
         value: message.value.toString(),
       }) 
-      console.log(messages);
+      console.log(message);
     }
   }) 
+  res.status(200).json(messages);
   // res.json(messages);
-  return res.status(200).json(messages);
 })
   
+// try {
+//   const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
+
+//   await consumer.connect();
+//   await consumer.subscribe({ topic: 'testing-topic', fromBeginning: true });
+
+//   const messages = [];
+//   await consumer.run({
+//     eachMessage: async ({ message }) => {
+//       messages.push(message.value.toString());
+//       console.log({
+//         value: message.value.toString(),
+//       }) 
+//       console.log(messages);
+//     }
+//   })
+//   res.locals.messages = messages;
+//   res.status(200).json(res.locals.messages);
+// }
+// catch (err) {
+//   console.error(err, 'Error in kafka consumer function');
+// }
 
 //unknown route error
 app.use((req, res) => {
