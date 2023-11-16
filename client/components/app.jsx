@@ -5,6 +5,7 @@ import { Brokers } from './pages/Brokers';
 import { Topics } from './pages/Topics';
 import { ProducersAndConsumers } from './pages/ProducersAndConsumers';
 import { Alerts } from './pages/Alerts';
+// import { beanCarry } from '../assets/beancarry.png'
 
 
 const App = () => {
@@ -63,8 +64,9 @@ const App = () => {
           <Route path='pcs' element={<ProducersAndConsumers />} />
           <Route path='alerts' element={<Alerts />} />
         </Routes>
-      </div><br/>
-      <img src="../assets/beancarry.png" alt="image didn't load"/>
+      </div>
+      <br/>
+      {/* <img id="beancarry" src={beanCarry} alt="BrewKafs carrying message beans"/> */}
     </div>
   );
 }
