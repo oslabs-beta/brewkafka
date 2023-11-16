@@ -1,5 +1,5 @@
-p {
-  color: rgb(0, 81, 128);
+body {
+  background-color: rgb(153, 124, 95);
 }
 
 .container {
@@ -8,9 +8,9 @@ p {
 }
 
 #sidebar {
-  border: 3px solid black;
-  background-color: palegoldenrod;
-  width: 11.4%;
+  border: 2px solid black;
+  background-color: rgb(188, 153, 126);
+  width: 15%;
   height: 90%;
   display: flex;
   flex-direction: column;
@@ -25,16 +25,25 @@ p {
 #contentDisplay {
   float: right;
   width: 80%;
-  background-color: rgb(68, 166, 219);
+  background-color: rgb(188, 153, 126);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
   font-family: 'Hina Mincho', serif;
 }
 
 .sbButton {
-  width: 100%;
-  height: 25%;
+  width: 99%;
+  height: 15%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   font-family: 'Cabin', sans-serif;
+  border: 2px solid black;
+  border-radius: 0px;
+  text-align: center;
+  margin-bottom: 1px;
+  color: black;
+}
 
+#beancarry {
+  padding-left: 500px;
 }
