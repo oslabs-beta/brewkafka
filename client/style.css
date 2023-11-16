@@ -2,6 +2,10 @@ body {
   background-color: rgb(153, 124, 95);
 }
 
+#wrapper {
+  position: relative;
+}
+
 .container {
   /* border: 3px solid black; */
   background-color: pink;
@@ -19,7 +23,10 @@ body {
   top:0;
   bottom:0;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
-
+  overflow: auto;
+  min-height: 300px;
+  /* box-sizing: border-box; */
+  /* min-width: 15%; */
 }
 
 #contentDisplay {
@@ -31,19 +38,27 @@ body {
 }
 
 .sbButton {
-  width: 99%;
+  width: auto;
   height: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Cabin', sans-serif;
-  border: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
   border-radius: 0px;
   text-align: center;
   margin-bottom: 1px;
   color: black;
+  /* padding: 0px; */
 }
 
 #beancarry {
-  padding-left: 500px;
+  /* padding-left: 500px; */
+  display: block;
+  width: 300px;
+  position: fixed;
+  bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -5,12 +5,12 @@ import { Brokers } from './pages/Brokers';
 import { Topics } from './pages/Topics';
 import { ProducersAndConsumers } from './pages/ProducersAndConsumers';
 import { Alerts } from './pages/Alerts';
-// import { beanCarry } from '../assets/beancarry.png'
+import beanCarry from '../assets/beancarry.png'
 
 
 const App = () => {
   return (
-    <div>
+    <div id="wrapper">
       <nav id="sidebar">
           <NavLink className='sbButton' 
           to='/brokers'
@@ -66,7 +66,7 @@ const App = () => {
         </Routes>
       </div>
       <br/>
-      {/* <img id="beancarry" src={beanCarry} alt="BrewKafs carrying message beans"/> */}
+      <img id="beancarry" src={beanCarry} alt="BrewKafs carrying message beans"/>
     </div>
   );
 }
