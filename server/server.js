@@ -11,43 +11,44 @@ app.use(express.json());
 
 //get request on connect button
 app.get('/connect', kafkaController.connectButton, (req, res) => {
-  res.status(200);
+  return res.status(200);
 });
 
 // app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
-//   res.status(200);
+//   return res.status(200);
 // })
 
 app.get(
-  '/topics&partitions',
+  '/topics-partitions',
   kafkaController.displayTopicsAndPartitions,
   (req, res) => {
-    res.status(200);
+    return res.status(200);
   },
 );
 
 app.get(
-  '/producers&consumers',
+  '/producers-consumers',
   kafkaController.displayProducersAndConsumers,
   (req, res) => {
-    res.status(200);
+    return res.status(200);
   },
 );
 
 app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
-  res.status(200);
+  return res.status(200);
 });
 
+//new kafka instance
 const kafka = new Kafka({
-  clientId: 'kafkabroker1',
   brokers: ['localhost:9092'],
 });
 
-const consumer = kafka.consumer({ groupId: 'test-group' });
-
 app.get('/getmessages', async (req, res) => {
+  //creating a consumer
+  const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
+
   await consumer.connect();
-  await consumer.subscribe({ topic: 'test-events', fromBeginning: true });
+  await consumer.subscribe({ topic: 'quickstart-events', fromBeginning: true });
 
   const messages = [];
   await consumer.run({
@@ -56,18 +57,17 @@ app.get('/getmessages', async (req, res) => {
       console.log({
         value: message.value.toString(),
       });
+      console.log(messages);
     },
   });
+  return res.status(200).json(messages);
 
-  await consumer.disconnect();
-
-  console.log(messages);
-  res.json(messages);
+  // await consumer.disconnect();
 });
 
 //unknown route error
-app.use((err, req, res, next) => {
-  res.status(404).send('Page not found');
+app.use((req, res) => {
+  return res.status(404).send('Page not found');
 });
 
 //global error handler
@@ -80,8 +80,6 @@ app.use((err, req, res, next) => {
   const errorObj = Object.assign(defaultErr, err);
   return res.status(errorObj.status).json(errorObj.message);
 });
-
-// test code for merge test
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`));
 
