@@ -55,12 +55,13 @@ body {
     min-width: 100px; /* prevents the button from getting too small */
     padding: 10px; /* adjust as necessary */
     font-size: 0.8em; /* smaller font size for smaller screens */
-    white-space: normal; /* allows text wrapping */
+    white-space: normal; /* for text wrapping */
     overflow: visible; /* makes sure text is not cut off */
     text-align: center; /* centers text in the button */
   }
 }
 
+/*Trying to have sidebar not overlap, but*/
 @media (max-width: 800px) {
   #sidebar,
   .sbButton,
