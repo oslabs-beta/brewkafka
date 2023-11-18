@@ -3,7 +3,7 @@ import React from 'react';
 export function Topics() {
   return (
     <>
-      <h1>Welcome to Topics</h1>
+      <h1>Topics & Messages Dashboard</h1>
       <object
         class='topic-count '
         data='http://localhost:3000/d-solo/fcab298e-8a43-4a92-a740-f11d2e992881/topic-count?orgId=1&from=now-24h&to=now&panelId=1'
