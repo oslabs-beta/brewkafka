@@ -60,7 +60,7 @@ app.get('/getmessages', async (req, res) => {
       console.log(messages);
     },
   });
-  return res.status(200).json(messages);
+  res.json(messages);
 
   // await consumer.disconnect();
 });
