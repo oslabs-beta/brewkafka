@@ -95,3 +95,11 @@ body {
     text-align: center;
   }
 }
+
+
+.input-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
