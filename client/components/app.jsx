@@ -6,10 +6,12 @@ import { Topics } from './pages/Topics';
 import { ProducersAndConsumers } from './pages/ProducersAndConsumers';
 import { Alerts } from './pages/Alerts';
 import beanCarry from '../assets/beancarry.png'
-
+import InputBar from './inputBar'
 const App = () => {
   return (
+    
     <div id="wrapper">
+      <InputBar />
       <nav id="sidebar">
           <NavLink className='sbButton' 
           to='/brokers'
@@ -66,6 +68,7 @@ const App = () => {
       <br/>
       <img id="beancarry" src={beanCarry} alt="BrewKafs carrying message beans"/>
     </div>
+    
   );
 };
 
