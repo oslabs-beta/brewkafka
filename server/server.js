@@ -9,8 +9,8 @@ const kafkaController = require('./controllers/kafkacontroller.js');
 app.use(bodyParser.urlencoded());
 app.use(express.json());
 
-//get request on connect button
-app.get('/connect', kafkaController.connectButton, (req, res) => {
+//post request on connect button
+app.post('/connect', kafkaController.connectButton, (req, res) => {
   return res.status(200);
 });
 
@@ -30,46 +30,49 @@ app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
   return res.status(200);
 })
 
+// user inputs kafka broker url in homepage input bar
+// utilize js-yaml module to write that url's port number into prometheus yaml file
+
 
 //new kafka instance
-const kafka = new Kafka({
-  brokers: ['localhost:9092']
-});
+// const kafka = new Kafka({
+//   brokers: ['localhost:9092']
+// });
 
 
-app.get('/getmessages', async (req, res) => {
-  //creating a producer
-  // const producer = kafka.producer();
+// app.get('/getmessages', async (req, res) => {
+//   //creating a producer
+//   const producer = kafka.producer();
   
   
-  // await producer.connect();
-  // await producer.send({
-  //   topic: 'new-topic',
-  //   messages: [
-  //     { value: 'MESSSAGGEEEE', partition: 0 },
-  //   ],
-  // })
+//   await producer.connect();
+//   await producer.send({
+//     topic: 'new-topic',
+//     messages: [
+//       { value: 'MESSSAGGEEEEEEEEE', partition: 0 },
+//     ],
+//   })
   
-  // creating a consumer
-  // const consumer = kafka.consumer({ groupId: 'new-consumer-group' });
-  const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
+//   // creating a consumer
+//   // const consumer = kafka.consumer({ groupId: 'new-consumer-group' });
+//   const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
 
-  await consumer.connect();
-  await consumer.subscribe({ topic: 'new-topic', fromBeginning: true });
+//   await consumer.connect();
+//   await consumer.subscribe({ topic: 'new-topic', fromBeginning: true });
 
-  const messages = [];
-  await consumer.run({
-    eachMessage: async ({ message }) => {
-      messages.push(message.value.toString());
-      console.log({
-        value: message.value.toString(),
-      }) 
-      console.log(message);
-    }
-  }) 
-  res.status(200).json(messages);
-  // res.json(messages);
-})
+//   const messages = [];
+//   await consumer.run({
+//     eachMessage: async ({ message }) => {
+//       messages.push(message.value.toString());
+//       console.log({
+//         value: message.value.toString(),
+//       }) 
+//       console.log(messages);
+//     }
+//   }) 
+//   res.status(200).json(messages);
+//   // res.json(messages);
+// })
   
 // try {
 //   const consumer = kafka.consumer({ groupId: 'test-consumer-group' });
