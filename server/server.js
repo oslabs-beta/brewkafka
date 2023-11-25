@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { Kafka } = require('kafkajs')
+const { Kafka } = require('kafkajs');
 const path = require('path');
 const app = express();
 const PORT = 1234;
@@ -19,20 +19,16 @@ app.post('/connect', kafkaController.connectButton, (req, res) => {
 // })
 
 app.get('/topics-partitions', kafkaController.displayTopicsAndPartitions, (req, res) => {
-  res.status(200);
+  return res.status(200);
 })
 
 app.get('/producers-consumers', kafkaController.displayProducersAndConsumers, (req, res) => {
-  res.status(200);
+  return res.status(200);
 })
 
 app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
   return res.status(200);
 })
-
-// user inputs kafka broker url in homepage input bar
-// utilize js-yaml module to write that url's port number into prometheus yaml file
-
 
 //new kafka instance
 // const kafka = new Kafka({
@@ -99,7 +95,7 @@ app.get('/alerts', kafkaController.displayAlerts, (req, res) => {
 
 //unknown route error
 app.use((req, res) => {
-   return res.status(404).send('Page not found');
+  return res.status(404).send('Page not found');
 });
 
 //global error handler
@@ -107,16 +103,12 @@ app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Global error',
     status: 500,
-    message: 'Error caught'
-  }
+    message: 'Error caught',
+  };
   const errorObj = Object.assign(defaultErr, err);
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`));
-
-
-
 
 module.exports = app;
