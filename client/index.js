@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom'
 import App from './components/app'
 import './style.css';
+import Loginpage from './components/pages/Loginpage';
 
 const root = ReactDOM.createRoot (document.getElementById('root'))
 

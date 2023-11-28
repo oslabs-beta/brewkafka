@@ -14,9 +14,9 @@ app.get('/connect', kafkaController.connectButton, (req, res) => {
   return res.status(200);
 });
 
-// app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
-//   return res.status(200);
-// })
+app.use('/brokers', (req, res) => {
+  return res.redirect('/brokers');
+})
 
 app.get(
   '/topics-partitions',

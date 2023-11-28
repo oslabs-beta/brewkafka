@@ -26,7 +26,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.png/,
+        test: /\.(png|gif)$/,
         type: 'asset/resource'
       },
     ],
@@ -38,9 +38,9 @@ module.exports = {
   ],
   devServer: {
     port: 8080,
-    // proxy: {
-    //   '/': 'http://localhost:1234',
-    // },
+    proxy: {
+      '/': 'http://localhost:1234',
+    },
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
