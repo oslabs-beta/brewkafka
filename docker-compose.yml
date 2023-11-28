@@ -1,0 +1,36 @@
+version: '3'
+services:
+  brewkafka:
+    build: .
+    volumes:
+      - prometheus_config:/app/server/
+    ports:
+      - '8080:8080'
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - prometheus_config:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--web.enable-lifecycle'
+    ports:
+      - '9090:9090'
+
+  grafana:
+    image: grafana/grafana
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources/
+      - ./grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_NAME=Main Org.
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Editor
+      - GF_AUTH_ANONYMOUS_HIDE_VERSION=true
+      - GF_SECURITY_ADMIN_PASSWORD=secret
+      - GF_ALLOW_EMBEDDING=true
+    ports:
+      - '3001:3000'
+volumes:
+  prometheus_config:

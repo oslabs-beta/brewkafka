@@ -27,14 +27,14 @@ module.exports = {
       },
       {
         test: /\.png/,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
     ],
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './client/index.html'
-    })
+      template: './client/index.html',
+    }),
   ],
   devServer: {
     port: 8080,
@@ -45,4 +45,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
   },
-}
+};

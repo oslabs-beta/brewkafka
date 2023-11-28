@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { Kafka } = require('kafkajs');
 const path = require('path');
+const fs = require('fs');
 const app = express();
 const PORT = 1234;
 const kafkaController = require('./controllers/kafkacontroller.js');
+// const kafkaRoutes = require('./routes/kafkaRoutes.js');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
@@ -14,6 +16,14 @@ app.post('/connect', kafkaController.connectButton, (req, res) => {
   console.log('in connect post request handler')
   return res.status(200);
 }); 
+
+// write server config for url of Kafka server
+// controller handles the response
+app.post('/config', kafkaController.addKafkaServerConfig);
+// app.post('/config', (req, res) => {
+//   console.log(req.body);
+//   return kafkaController.addKafkaServerConfig;
+// });
 
 // app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
 //   return res.status(200);

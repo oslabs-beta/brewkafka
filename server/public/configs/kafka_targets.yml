@@ -1,0 +1,8 @@
+- targets:
+    - poop
+  labels:
+    job: kafka
+- targets:
+    - twitch.tv
+  labels:
+    job: kafka
