@@ -30,13 +30,13 @@ body {
   /* min-width: 15%; */
 }
 
-#contentDisplay {
+/* #contentDisplay {
   float: right;
   width: 80%;
   background-color: rgb(188, 153, 126);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
   font-family: 'Hina Mincho', serif;
-}
+} */
 
 .sbButton {
   width: auto;
@@ -68,6 +68,19 @@ body {
   /* margin-right: auto; */
 }
 
+.beanCarryGif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#bcgif {
+  width: 80%;
+  display: flex;
+  position: absolute;
+}
+
 @media (max-width: 999px) {
   .sbButton,
   #sidebar,
@@ -96,10 +109,31 @@ body {
   }
 }
 
-
-.input-bar-container {
+.formBox {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  flex-direction: column;
+  position: relative;
+  margin-top: 10%;
+  background-color: rgb(188, 153, 126);
+  border: 1px solid rgb(136, 73, 73);
+  border-radius: 10px;
+  padding: 70px 20px 50px 20px;
+  box-shadow: 0 6px 8px rgba(75, 41, 41, 0.5);
+  font-family: 'Hina Mincho', serif;
+  font-size: larger;
+}
+
+#inputBox {
+  background-color: white;
+  border: 1px solid rgb(136, 73, 73);
+  border-radius: 5px;
+  width: 200px;
+  height: 20px;
+}
+
+.connectButton {
+  background-color: white;
+  border: 1px solid rgb(136, 73, 73);
+  border-radius: 5px;
+  height: 25px;
 }
