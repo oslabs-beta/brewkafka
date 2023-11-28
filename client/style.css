@@ -96,10 +96,14 @@ body {
   }
 }
 
-
 .input-bar-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+}
+
+.inputbar2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

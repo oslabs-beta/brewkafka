@@ -27,22 +27,22 @@ module.exports = {
       },
       {
         test: /\.png/,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
     ],
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: './client/index.html'
-    })
+      template: './client/index.html',
+    }),
   ],
   devServer: {
     port: 8080,
-    // proxy: {
-    //   '/': 'http://localhost:1234',
-    // },
+    proxy: {
+      '/': 'http://localhost:1234',
+    },
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
   },
-}
+};
