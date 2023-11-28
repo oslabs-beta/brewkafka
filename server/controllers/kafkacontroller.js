@@ -3,6 +3,7 @@ const kafkaController = {};
 //middleware functions
 kafkaController.connectButton = (req, res, next) => {
     //send user to display page
+    console.log(req.body)
     return next();
 }
 

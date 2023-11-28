@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const InputBar = () =>{
 
@@ -10,21 +10,23 @@ const InputBar = () =>{
     };
 
     //handle submit
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         console.log('Submitted:', inputValue);
     }
     return (
-      <div className="input-bar-container">
+      <form method="post" className="input-bar-container">
         <label>
             Connect to your Kafka cluster   
             <input
             type="text"
+            name="inputValue"
             value={inputValue}
             onChange={handleChange}
             />
         </label>
-        <button onClick={handleSubmit}>Connect!</button>
-    </div>
+        <button type="submit" formAction="/connect">Connect!</button>
+    </form>
     );
 };
 

@@ -6,13 +6,14 @@ const app = express();
 const PORT = 1234;
 const kafkaController = require('./controllers/kafkacontroller.js');
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
 //post request on connect button
 app.post('/connect', kafkaController.connectButton, (req, res) => {
+  console.log('in connect post request handler')
   return res.status(200);
-});
+}); 
 
 // app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
 //   return res.status(200);
