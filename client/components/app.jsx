@@ -8,13 +8,11 @@ import { Alerts } from './pages/Alerts';
 import beanCarry from '../assets/beancarry.png';
 import InputBar from './inputBar';
 // import { Kafka } from 'kafkajs';
-import { KafkaConfigForm } from './KafkaConfigForm';
 
 const App = () => {
   return (
     <div id='wrapper'>
       <InputBar />
-      <KafkaConfigForm />
       <nav id='sidebar'>
         <NavLink
           className='sbButton'
