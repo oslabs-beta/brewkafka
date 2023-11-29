@@ -11,11 +11,12 @@ const KafkaService = {
         body: JSON.stringify({ serverUrl }),
       });
       console.log(serverUrl);
+      return response.json();
       // await prometheusConfigWriter.writeConfig(serverUrl);
     } catch (error) {
       throw new Error('Error updating Kafka service server config: ' + error);
     }
-    return response.json();
+    // return response.json();
   },
   reloadPrometheusConfig: async () => {
     // Replace with the correct URL if Prometheus is running elsewhere

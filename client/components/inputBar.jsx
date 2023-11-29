@@ -5,6 +5,8 @@ const InputBar = () => {
   //handle change
   const [inputValue, setInputValue] = useState('');
 
+  const navigate = useNavigate();
+
   const handleChange = e => {
     setInputValue(e.target.value);
   };
@@ -20,6 +22,7 @@ const InputBar = () => {
     } catch (error) {
       console.log('Error with Kafka config updating: ' + error);
     }
+    navigate('/dashboards')
   };
   return (
     <div className='input-bar-container'>

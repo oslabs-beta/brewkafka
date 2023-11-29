@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { Kafka } = require('kafkajs');
 const path = require('path');
 const fs = require('fs');
@@ -8,6 +9,7 @@ const PORT = 1234;
 const kafkaController = require('./controllers/kafkacontroller.js');
 // const kafkaRoutes = require('./routes/kafkaRoutes.js');
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
