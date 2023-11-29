@@ -24,9 +24,6 @@ kafkaController.displayProducersAndConsumers = (req, res, next) => {
 
 // config writer for kafka server
 // server/controllers/kafkaController.js
-
-// ... other imports and code
-
 kafkaController.addKafkaServerConfig = async (req, res) => {
   try {
     console.log('writing server config for kafka');
@@ -47,8 +44,6 @@ kafkaController.addKafkaServerConfig = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-// ... rest of the kafkaController code
 
 kafkaController.displayAlerts = (req, res, next) => {};
 
