@@ -19,10 +19,19 @@ app.get('/connect', kafkaController.connectButton, (req, res) => {
 // write server config for url of Kafka server
 // controller handles the response
 app.post('/config', kafkaController.addKafkaServerConfig);
-// app.post('/config', (req, res) => {
-//   console.log(req.body);
-//   return kafkaController.addKafkaServerConfig;
-// });
+
+// post req to manually refresh prometheus
+app.post('/promReload', async (req, res) => {
+  try {
+    await fetch('http://prometheus:9090/-/reload', { method: 'POST' });
+    res.json({ message: 'Prometheus config reload in backend.' });
+  } catch (error) {
+    console.error('Error in backend prometheus config reload: ' + error);
+    res
+      .status(500)
+      .json({ message: 'Failed to reload prometheus config in backend.' });
+  }
+});
 
 // app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
 //   return res.status(200);

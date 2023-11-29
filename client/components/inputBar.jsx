@@ -14,9 +14,9 @@ const InputBar = () => {
     console.log('Submitted: ', inputValue);
     try {
       await KafkaService.addKafkaServer(inputValue);
-      console.log('Updated server successfully');
+      //   console.log('Updated server successfully');
       await KafkaService.reloadPrometheusConfig();
-      console.log('Prometheus reloaded');
+      //   console.log('Prometheus reloaded');
     } catch (error) {
       console.log('Error with Kafka config updating: ' + error);
     }

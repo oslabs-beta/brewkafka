@@ -6,6 +6,8 @@ services:
       - prometheus_config:/app/server/
     ports:
       - '8080:8080'
+    depends_on:
+      - grafana
 
   prometheus:
     image: prom/prometheus
@@ -16,6 +18,8 @@ services:
       - '--web.enable-lifecycle'
     ports:
       - '9090:9090'
+    depends_on:
+      - grafana
 
   grafana:
     image: grafana/grafana
@@ -29,7 +33,7 @@ services:
       - GF_AUTH_ANONYMOUS_ORG_ROLE=Editor
       - GF_AUTH_ANONYMOUS_HIDE_VERSION=true
       - GF_SECURITY_ADMIN_PASSWORD=secret
-      - GF_ALLOW_EMBEDDING=true
+      - GF_SECURITY_ALLOW_EMBEDDING=true
     ports:
       - '3001:3000'
 volumes:
