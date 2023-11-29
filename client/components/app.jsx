@@ -5,13 +5,17 @@ import { Brokers } from './pages/Brokers';
 import { Topics } from './pages/Topics';
 import { ProducersAndConsumers } from './pages/ProducersAndConsumers';
 import { Alerts } from './pages/Alerts';
-import beanCarry from '../assets/beancarry.png'
+import beanCarry from '../assets/beancarry.png';
+import InputBar from './inputBar';
+// import { Kafka } from 'kafkajs';
 
 const App = () => {
   return (
-    <div id="wrapper">
-      <nav id="sidebar">
-          <NavLink className='sbButton' 
+    <div id='wrapper'>
+      <InputBar />
+      <nav id='sidebar'>
+        <NavLink
+          className='sbButton'
           to='/brokers'
           style={({ isActive, isPending, isTransitioning }) => {
             return {
@@ -63,8 +67,12 @@ const App = () => {
           <Route path='alerts' element={<Alerts />} />
         </Routes>
       </div>
-      <br/>
-      <img id="beancarry" src={beanCarry} alt="BrewKafs carrying message beans"/>
+      <br />
+      <img
+        id='beancarry'
+        src={beanCarry}
+        alt='BrewKafs carrying message beans'
+      />
     </div>
   );
 };

@@ -19,6 +19,18 @@ export function Brokers() {
         width='450'
         height='200'
         frameborder='0'></object>
+      <h1>Active broker count -- docker ver.</h1>
+      <iframe
+        src='http://localhost:3001/d-solo/c815566a-1a0f-4bea-a96b-df57bf18c720/docker-dashboard?orgId=1&panelId=1'
+        width='450'
+        height='200'
+        frameborder='0'></iframe>
+      <h1>Broker bytes in per sec - docker iframe</h1>
+      <iframe
+        src='http://localhost:3001/d-solo/c815566a-1a0f-4bea-a96b-df57bf18c720/docker-dashboard?orgId=1&panelId=9'
+        width='450'
+        height='200'
+        frameborder='0'></iframe>
     </>
   );
 }
