@@ -24,13 +24,13 @@ export function ProducersAndConsumers() {
         width='450'
         height='200'
         frameborder='0'></object> */}
-      <h1>Docker iframe producer count:</h1>
+      <h1>Producer count:</h1>
       <iframe
         src='http://localhost:3001/d-solo/c815566a-1a0f-4bea-a96b-df57bf18c720/docker-dashboard?orgId=1&panelId=3'
         width='450'
         height='200'
         frameborder='0'></iframe>
-      <h1>Docker iframe Producer req per sec:</h1>
+      <h1>Producer request per sec:</h1>
       <iframe
         src='http://localhost:3001/d-solo/c815566a-1a0f-4bea-a96b-df57bf18c720/docker-dashboard?orgId=1&panelId=4'
         width='450'
