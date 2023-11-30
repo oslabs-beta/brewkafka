@@ -27,18 +27,28 @@ Requirements:
 - 9090 for Prometheus
 - 3001 for Grafana
 
-*If user is hosting their Kafka server locally, use* ```host.docker.internal:[port]```. ```Localhost:[port]``` does not work.
+*If user is hosting their Kafka server locally, use* ```host.docker.internal:[port]```.</br>
+```Localhost:[port]``` *does not work*.
 
 
 # Developed using
 
+![HTML](https://img.shields.io/badge/HTML-orange?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-blue?style=for-the-badge&logo=css3)
 ![JavaScript](https://img.shields.io/badge/JavaScript-gray?style=for-the-badge&logo=javascript)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
-![React](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=react)
+![React](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=reac&logoColor=white)
+![React Router](https://img.shields.io/badge/React%20Router-black?style=for-the-badge&logo=reactrouter)
+![Express](https://img.shields.io/badge/express-beige?style=for-the-badge&logo=express&logoColor=black)
+![Prometheus](https://img.shields.io/badge/prometheus-black?style=for-the-badge&logo=prometheus)
+![Grafana](https://img.shields.io/badge/grafana-yellow?style=for-the-badge&logo=grafana)
+![Kafka](https://img.shields.io/badge/kafka-hotpink?style=for-the-badge&logo=apachekafka)
+![Docker](https://img.shields.io/badge/docker-blue?style=for-the-badge&logo=docker&logoColor=white)
+![NodeJS](https://img.shields.io/badge/NodeJS-darkblue?style=for-the-badge&logo=nodedotjs&logoColor=#339933)
 
 # Made by
 
-- Nick Dabreau [Github](https://github.com/nick-dab) | [LinkedIn]()
+- Nick Dabreau [Github](https://github.com/nick-dab) | [LinkedIn]
 - Robert Forrester [Github](https://github.com/Canarsie) | [LinkedIn](www.linkedin.com/in/brobertforrester)
 - Andrew Lo [Github](https://github.com/lomeintheory) | [LinkedIn](https://www.linkedin.com/in/andrew--lo/)
 - Helen Ta [Github](https://github.com/Helen-Ta) | [LinkedIn](www.linkedin.com/in/helen-ta)
