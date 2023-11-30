@@ -1,17 +1,16 @@
 # BrewKafka
 
-<img src='./client/assets/logo.png' alt='BrewKafka logo'>
+<img src='./client/assets/brewkafka_logo_original.png' width='80%' alt='BrewKafka logo'>
 
 # Setup
 
-Requirements:
 ### This app assumes the user has:
 - a standalone kafka broker
 - their own Kafka Server
 - “jmx_prometheus_javaagent-0.19.0.jar” in “libs” folder
 - a specific "kafka_broker.yml" file in "config" folder
 
-
+### To add your Kafka server:
 1. Wait about 10s for grafana to load, then set your url, otherwise it may crash and stop
     - In the event of a crash, just go to docker and turn on grafana again via GUI
 
@@ -22,7 +21,7 @@ Requirements:
     ```
     This sets your Kafka JMX port to 7071 for prometheus to scrape metrics
 
-### Ports we are exposing docker containers to (Ports to keep open):
+### Ports to which we are exposing docker containers (Ports to keep open):
 - 8080 for BrewKafka
 - 9090 for Prometheus
 - 3001 for Grafana
