@@ -32,14 +32,14 @@ Requirements:
 
 # Developed using
 
-![JavaScript]https://img.shields.io/badge/JavaScript-gray?style=for-the-badge&logo=javascript
+![JavaScript](https://img.shields.io/badge/JavaScript-gray?style=for-the-badge&logo=javascript)
 ![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
-![React]https://img.shields.io/badge/React-blue?style=for-the-badge&logo=react
+![React](https://img.shields.io/badge/React-blue?style=for-the-badge&logo=react)
 
 # Made by
 
-- Nick Dabreau [Github](https://github.com/nick-dab) | [LinkedIn](www.linkedin.com/in/brobertforrester)
-- Robert Forrester [Github](https://github.com/Canarsie) | [LinkedIn]()
+- Nick Dabreau [Github](https://github.com/nick-dab) | [LinkedIn]()
+- Robert Forrester [Github](https://github.com/Canarsie) | [LinkedIn](www.linkedin.com/in/brobertforrester)
 - Andrew Lo [Github](https://github.com/lomeintheory) | [LinkedIn](https://www.linkedin.com/in/andrew--lo/)
 - Helen Ta [Github](https://github.com/Helen-Ta) | [LinkedIn](www.linkedin.com/in/helen-ta)
 - Jordan Woods [Github](https://github.com/ejwoods) | [LinkedIn](https://www.linkedin.com/in/jordanwoods277/)
