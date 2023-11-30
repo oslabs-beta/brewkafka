@@ -47,7 +47,7 @@
 
 # Made by
 
-- Nick Dabreau [Github](https://github.com/nick-dab) | [LinkedIn]
+- Nick Dabreau [Github](https://github.com/nick-dab) | [LinkedIn](www.linkedIn.com/in/nickdabreau)
 - Robert Forrester [Github](https://github.com/Canarsie) | [LinkedIn](www.linkedin.com/in/brobertforrester)
 - Andrew Lo [Github](https://github.com/lomeintheory) | [LinkedIn](https://www.linkedin.com/in/andrew--lo/)
 - Helen Ta [Github](https://github.com/Helen-Ta) | [LinkedIn](www.linkedin.com/in/helen-ta)
