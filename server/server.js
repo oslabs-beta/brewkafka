@@ -27,9 +27,9 @@ app.post('/config', kafkaController.addKafkaServerConfig);
 //   return kafkaController.addKafkaServerConfig;
 // });
 
-// app.get('/brokers', kafkaController.displayBrokers, (req, res) => {
-//   return res.status(200);
-// })
+app.use('/brokers', (req, res) => {
+  return res.redirect('/brokers');
+})
 
 app.get('/topics-partitions', kafkaController.displayTopicsAndPartitions, (req, res) => {
   return res.status(200);
