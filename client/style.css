@@ -2,6 +2,12 @@ body {
   background-color: rgb(153, 124, 95);
 }
 
+#dashboardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
 #wrapper {
   /* display: flex; */
   position: relative;
@@ -31,12 +37,19 @@ body {
 }
 
 /* #contentDisplay {
-  float: right;
+  float: center;
   width: 80%;
   background-color: rgb(188, 153, 126);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
   font-family: 'Hina Mincho', serif;
 } */
+
+#contentDisplay {
+  float: right;
+  width: 80%;
+  background-color: rgb(153, 124, 95);
+  font-family: 'Hina Mincho', serif;
+}
 
 .sbButton {
   width: auto;
@@ -108,7 +121,6 @@ body {
     text-align: center;
   }
 }
-
 .formBox {
   display: flex;
   flex-direction: column;
@@ -136,4 +148,11 @@ body {
   border: 1px solid rgb(136, 73, 73);
   border-radius: 5px;
   height: 25px;
+}
+
+
+.inputbar2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
