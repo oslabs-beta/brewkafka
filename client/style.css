@@ -2,6 +2,12 @@ body {
   background-color: rgb(153, 124, 95);
 }
 
+#dashboardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
 #wrapper {
   /* display: flex; */
   position: relative;
@@ -20,9 +26,9 @@ body {
   display: flex;
   flex-direction: column;
   position: fixed;
-  left:0;
-  top:0;
-  bottom:0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
   overflow: auto;
   min-height: 300px;
@@ -30,11 +36,18 @@ body {
   /* min-width: 15%; */
 }
 
-#contentDisplay {
-  float: right;
+/* #contentDisplay {
+  float: center;
   width: 80%;
   background-color: rgb(188, 153, 126);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'Hina Mincho', serif;
+} */
+
+#contentDisplay {
+  float: right;
+  width: 80%;
+  background-color: rgb(153, 124, 95);
   font-family: 'Hina Mincho', serif;
 }
 
@@ -66,4 +79,80 @@ body {
   justify-content: center;
   /* margin-left: auto; */
   /* margin-right: auto; */
+}
+
+.beanCarryGif {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+#bcgif {
+  width: 80%;
+  display: flex;
+  position: absolute;
+}
+
+@media (max-width: 999px) {
+  .sbButton,
+  #sidebar,
+  .container {
+    width: auto;
+    min-width: 100px; /* prevents the button from getting too small */
+    padding: 10px; /* adjust as necessary */
+    font-size: 0.8em; /* smaller font size for smaller screens */
+    white-space: normal; /* for text wrapping */
+    overflow: visible; /* makes sure text is not cut off */
+    text-align: center; /* centers text in the button */
+  }
+}
+
+/*Trying to have sidebar not overlap, but*/
+@media (max-width: 800px) {
+  #sidebar,
+  .sbButton,
+  .container {
+    width: auto;
+    max-width: 99px; /* prevent overlapping on grafana panel */
+    min-width: 10px; /* prevent overlapping on grafana panel */
+    white-space: normal;
+    overflow: visible;
+    text-align: center;
+  }
+}
+.formBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 10%;
+  background-color: rgb(188, 153, 126);
+  border: 1px solid rgb(136, 73, 73);
+  border-radius: 10px;
+  padding: 70px 20px 50px 20px;
+  box-shadow: 0 6px 8px rgba(75, 41, 41, 0.5);
+  font-family: 'Hina Mincho', serif;
+  font-size: larger;
+}
+
+#inputBox {
+  background-color: white;
+  border: 1px solid rgb(136, 73, 73);
+  border-radius: 5px;
+  width: 200px;
+  height: 20px;
+}
+
+.connectButton {
+  background-color: white;
+  border: 1px solid rgb(136, 73, 73);
+  border-radius: 5px;
+  height: 25px;
+}
+
+
+.inputbar2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
