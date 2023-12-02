@@ -25,7 +25,7 @@ const [isSubmitted, setIsSubmitted] = useState(false);
       await KafkaService.addKafkaServer(inputValue);
       console.log('did this work please let it work');
     
-    //   await KafkaService.reloadPrometheusConfig();
+      // await KafkaService.reloadPrometheusConfig();
       console.log('Prometheus reloaded');
       navigate('/dashboards')
     } catch (error) {
